@@ -9,6 +9,15 @@ export default function Header() {
     }
   };
 
+  const navLinks = [
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Services", id: "services" },
+    { label: "Work", id: "work" },
+    { label: "Testimonials", id: "testimonials" },
+    { label: "Contact", id: "contact" },
+  ];
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -23,31 +32,20 @@ export default function Header() {
             className="text-lg font-semibold tracking-tight hover-elevate px-3 py-1 rounded-md transition-colors"
             data-testid="link-logo"
           >
-            Portfolio
+            Shinabella
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-sm hover-elevate px-3 py-1 rounded-md transition-colors"
-              data-testid="link-about"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("work")}
-              className="text-sm hover-elevate px-3 py-1 rounded-md transition-colors"
-              data-testid="link-work"
-            >
-              Work
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-sm hover-elevate px-3 py-1 rounded-md transition-colors"
-              data-testid="link-contact"
-            >
-              Contact
-            </button>
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="text-sm hover-elevate px-3 py-1 rounded-md transition-colors"
+                data-testid={`link-${link.id}`}
+              >
+                {link.label}
+              </button>
+            ))}
           </nav>
 
           <ThemeToggle />
