@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "E-Commerce Platform",
+    "description": "Modern online shopping experience with seamless checkout",
+    "tags": ["UI/UX", "React", "Commerce"],
+    "palette": ["#FF6B6B", "#4ECDC4", "#45B7D1"]
+  },
+  {
+    "id": "2",
+    "title": "Brand Identity",
+    "description": "Complete visual identity system for sustainable fashion brand",
+    "tags": ["Branding", "Design", "Strategy"],
+    "palette": ["#A8E6CF", "#FFD3B6", "#FFAAA5"]
+  },
+  {
+    "id": "3",
+    "title": "Mobile Banking App",
+    "description": "Intuitive financial management for modern users",
+    "tags": ["Mobile", "FinTech", "iOS"],
+    "palette": ["#667EEA", "#764BA2", "#F093FB"]
+  },
+  {
+    "id": "4",
+    "title": "Wellness Dashboard",
+    "description": "Track health metrics and build better habits",
+    "tags": ["Dashboard", "Health", "Analytics"],
+    "palette": ["#4FACFE", "#00F2FE", "#43E97B"]
+  },
+  {
+    "id": "5",
+    "title": "Creative Agency Site",
+    "description": "Award-winning website showcasing agency portfolio",
+    "tags": ["Web Design", "Agency", "Interactive"],
+    "palette": ["#FA709A", "#FEE140", "#30CFD0"]
+  },
+  {
+    "id": "6",
+    "title": "Food Delivery App",
+    "description": "Quick and easy meal ordering experience",
+    "tags": ["Mobile", "UX", "Food"],
+    "palette": ["#F857A6", "#FF5858", "#FFC371"]
+  },
+  {
+    "id": "7",
+    "title": "SaaS Platform",
+    "description": "B2B software for team collaboration",
+    "tags": ["SaaS", "Enterprise", "Dashboard"],
+    "palette": ["#5E72E4", "#825EE4", "#11CDEF"]
+  },
+  {
+    "id": "8",
+    "title": "Travel Booking",
+    "description": "Discover and book unique travel experiences",
+    "tags": ["Travel", "Booking", "Mobile"],
+    "palette": ["#667EEA", "#F6D365", "#FDA085"]
+  },
+  {
+    "id": "9",
+    "title": "Fitness Tracking",
+    "description": "Personal trainer in your pocket",
+    "tags": ["Fitness", "Mobile", "Wearables"],
+    "palette": ["#38F9D7", "#43E97B", "#FA709A"]
+  }
+]

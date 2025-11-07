@@ -1,0 +1,52 @@
+import { motion } from "framer-motion";
+import Masonry from "react-masonry-css";
+import ProjectCard from "./ProjectCard";
+import projectsData from "../data/projects.json";
+
+export default function WorkSection() {
+  const breakpointColumns = {
+    default: 3,
+    1024: 2,
+    640: 1,
+  };
+
+  return (
+    <section id="work" className="py-20 lg:py-32 px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 space-y-4"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight" data-testid="text-work-title">
+            Selected Work
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl" data-testid="text-work-description">
+            A collection of recent projects showcasing design thinking and
+            technical execution.
+          </p>
+        </motion.div>
+
+        <Masonry
+          breakpointCols={breakpointColumns}
+          className="flex -ml-6 w-auto"
+          columnClassName="pl-6 bg-clip-padding"
+        >
+          {projectsData.map((project, index) => (
+            <div key={project.id} className="mb-6">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                palette={project.palette}
+                index={index}
+              />
+            </div>
+          ))}
+        </Masonry>
+      </div>
+    </section>
+  );
+}
