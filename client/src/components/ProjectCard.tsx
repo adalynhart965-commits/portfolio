@@ -18,6 +18,18 @@ function generateGradient(colors: string[]): string {
   return `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`;
 }
 
+const imageMap: Record<string, string> = {
+  "1_1762538082922.jpg": new URL("../../attached_assets/1_1762538082922.jpg", import.meta.url).href,
+  "2_1762538092521.jpg": new URL("../../attached_assets/2_1762538092521.jpg", import.meta.url).href,
+  "3_1762538099451.jpg": new URL("../../attached_assets/3_1762538099451.jpg", import.meta.url).href,
+  "4_1762538111096.jpg": new URL("../../attached_assets/4_1762538111096.jpg", import.meta.url).href,
+  "5_1762538120250.jpg": new URL("../../attached_assets/5_1762538120250.jpg", import.meta.url).href,
+  "6_1762538127848.jpg": new URL("../../attached_assets/6_1762538127848.jpg", import.meta.url).href,
+  "7_1762538134944.jpg": new URL("../../attached_assets/7_1762538134944.jpg", import.meta.url).href,
+  "8_1762538142928.jpg": new URL("../../attached_assets/8_1762538142928.jpg", import.meta.url).href,
+  "9_1762538150473.jpg": new URL("../../attached_assets/9_1762538150473.jpg", import.meta.url).href,
+};
+
 export default function ProjectCard({
   title,
   description,
@@ -28,15 +40,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const gradient = generateGradient(palette);
   const isLarge = index % 5 === 0;
-
-  let imageUrl: string | undefined;
-  if (image) {
-    try {
-      imageUrl = new URL(`../../attached_assets/${image}`, import.meta.url).href;
-    } catch (e) {
-      console.error("Failed to load image:", image, e);
-    }
-  }
+  const imageUrl = image ? imageMap[image] : undefined;
 
   return (
     <motion.div
