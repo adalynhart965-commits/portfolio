@@ -5,7 +5,7 @@
     "description": "Modern online shopping experience with seamless checkout",
     "tags": ["UI/UX", "React", "Commerce"],
     "palette": ["#FF6B6B", "#4ECDC4", "#45B7D1"],
-    "image": "1_1762538082922.jpg"
+    "frameType": "desktop"
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "description": "Complete visual identity system for sustainable fashion brand",
     "tags": ["Branding", "Design", "Strategy"],
     "palette": ["#A8E6CF", "#FFD3B6", "#FFAAA5"],
-    "image": "2_1762538092521.jpg"
+    "frameType": "none"
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "description": "Intuitive financial management for modern users",
     "tags": ["Mobile", "FinTech", "iOS"],
     "palette": ["#667EEA", "#764BA2", "#F093FB"],
-    "image": "3_1762538099451.jpg"
+    "frameType": "mobile"
   },
   {
     "id": "4",
@@ -29,7 +29,7 @@
     "description": "Track health metrics and build better habits",
     "tags": ["Dashboard", "Health", "Analytics"],
     "palette": ["#4FACFE", "#00F2FE", "#43E97B"],
-    "image": "4_1762538111096.jpg"
+    "frameType": "desktop"
   },
   {
     "id": "5",
@@ -37,7 +37,7 @@
     "description": "Award-winning website showcasing agency portfolio",
     "tags": ["Web Design", "Agency", "Interactive"],
     "palette": ["#FA709A", "#FEE140", "#30CFD0"],
-    "image": "5_1762538120250.jpg"
+    "frameType": "desktop"
   },
   {
     "id": "6",
@@ -45,7 +45,7 @@
     "description": "Quick and easy meal ordering experience",
     "tags": ["Mobile", "UX", "Food"],
     "palette": ["#F857A6", "#FF5858", "#FFC371"],
-    "image": "6_1762538127848.jpg"
+    "frameType": "mobile"
   },
   {
     "id": "7",
@@ -53,7 +53,7 @@
     "description": "B2B software for team collaboration",
     "tags": ["SaaS", "Enterprise", "Dashboard"],
     "palette": ["#5E72E4", "#825EE4", "#11CDEF"],
-    "image": "7_1762538134944.jpg"
+    "frameType": "desktop"
   },
   {
     "id": "8",
@@ -61,7 +61,7 @@
     "description": "Discover and book unique travel experiences",
     "tags": ["Travel", "Booking", "Mobile"],
     "palette": ["#667EEA", "#F6D365", "#FDA085"],
-    "image": "8_1762538142928.jpg"
+    "frameType": "mobile"
   },
   {
     "id": "9",
@@ -69,6 +69,6 @@
     "description": "Personal trainer in your pocket",
     "tags": ["Fitness", "Mobile", "Wearables"],
     "palette": ["#38F9D7", "#43E97B", "#FA709A"],
-    "image": "9_1762538150473.jpg"
+    "frameType": "mobile"
   }
 ]

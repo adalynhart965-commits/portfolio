@@ -9,7 +9,7 @@ interface Project {
   description: string;
   tags: string[];
   palette: string[];
-  image?: string;
+  frameType: "mobile" | "desktop" | "none";
 }
 
 export default function WorkSection() {
@@ -30,11 +30,10 @@ export default function WorkSection() {
           className="mb-16 space-y-4"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight" data-testid="text-work-title">
-            Selected Work
+            Work
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl" data-testid="text-work-description">
-            A collection of recent projects showcasing design thinking and
-            technical execution.
+            Showcase projects using mock hero photos generated from project tags and color palettes.
           </p>
         </motion.div>
 
@@ -46,11 +45,12 @@ export default function WorkSection() {
           {(projectsData as Project[]).map((project, index) => (
             <div key={project.id} className="mb-6">
               <ProjectCard
+                id={project.id}
                 title={project.title}
                 description={project.description}
                 tags={project.tags}
                 palette={project.palette}
-                image={project.image}
+                frameType={project.frameType}
                 index={index}
               />
             </div>

@@ -1,46 +1,28 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import MockHeroVisual from "./MockHeroVisual";
+import DeviceFrame from "./DeviceFrame";
 
 interface ProjectCardProps {
+  id: string;
   title: string;
   description: string;
   tags: string[];
   palette: string[];
-  image?: string;
+  frameType: "mobile" | "desktop" | "none";
   index: number;
 }
 
-function generateGradient(colors: string[]): string {
-  if (colors.length === 1) return colors[0];
-  if (colors.length === 2) {
-    return `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 100%)`;
-  }
-  return `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`;
-}
-
-const imageMap: Record<string, string> = {
-  "1_1762538082922.jpg": new URL("../../attached_assets/1_1762538082922.jpg", import.meta.url).href,
-  "2_1762538092521.jpg": new URL("../../attached_assets/2_1762538092521.jpg", import.meta.url).href,
-  "3_1762538099451.jpg": new URL("../../attached_assets/3_1762538099451.jpg", import.meta.url).href,
-  "4_1762538111096.jpg": new URL("../../attached_assets/4_1762538111096.jpg", import.meta.url).href,
-  "5_1762538120250.jpg": new URL("../../attached_assets/5_1762538120250.jpg", import.meta.url).href,
-  "6_1762538127848.jpg": new URL("../../attached_assets/6_1762538127848.jpg", import.meta.url).href,
-  "7_1762538134944.jpg": new URL("../../attached_assets/7_1762538134944.jpg", import.meta.url).href,
-  "8_1762538142928.jpg": new URL("../../attached_assets/8_1762538142928.jpg", import.meta.url).href,
-  "9_1762538150473.jpg": new URL("../../attached_assets/9_1762538150473.jpg", import.meta.url).href,
-};
-
 export default function ProjectCard({
+  id,
   title,
   description,
   tags,
   palette,
-  image,
+  frameType,
   index,
 }: ProjectCardProps) {
-  const gradient = generateGradient(palette);
   const isLarge = index % 5 === 0;
-  const imageUrl = image ? imageMap[image] : undefined;
 
   return (
     <motion.div
@@ -48,27 +30,23 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative overflow-hidden rounded-md ${
+      className={`group relative overflow-hidden rounded-md bg-card ${
         isLarge ? "row-span-2" : ""
       }`}
       data-testid={`card-project-${index}`}
     >
-      {imageUrl ? (
-        <div className="absolute inset-0">
-          <img
-            src={imageUrl}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      <div className="absolute inset-0">
+        <DeviceFrame type={frameType}>
+          <MockHeroVisual
+            projectId={id}
+            tags={tags}
+            palette={palette}
+            className="transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
-      ) : (
-        <div
-          className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
-          style={{ background: gradient }}
-        />
-      )}
+        </DeviceFrame>
+      </div>
       
-      <div className="relative h-full min-h-[280px] p-6 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+      <div className="relative h-full min-h-[280px] p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent">
         <div className="space-y-3">
           <h3 className="text-xl font-semibold text-white" data-testid={`text-title-${index}`}>
             {title}
