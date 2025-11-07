@@ -6,6 +6,7 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   palette: string[];
+  image?: string;
   index: number;
 }
 
@@ -22,10 +23,20 @@ export default function ProjectCard({
   description,
   tags,
   palette,
+  image,
   index,
 }: ProjectCardProps) {
   const gradient = generateGradient(palette);
   const isLarge = index % 5 === 0;
+
+  let imageUrl: string | undefined;
+  if (image) {
+    try {
+      imageUrl = new URL(`../../attached_assets/${image}`, import.meta.url).href;
+    } catch (e) {
+      console.error("Failed to load image:", image, e);
+    }
+  }
 
   return (
     <motion.div
@@ -38,12 +49,22 @@ export default function ProjectCard({
       }`}
       data-testid={`card-project-${index}`}
     >
-      <div
-        className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
-        style={{ background: gradient }}
-      />
+      {imageUrl ? (
+        <div className="absolute inset-0">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+      ) : (
+        <div
+          className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
+          style={{ background: gradient }}
+        />
+      )}
       
-      <div className="relative h-full min-h-[280px] p-6 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+      <div className="relative h-full min-h-[280px] p-6 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent">
         <div className="space-y-3">
           <h3 className="text-xl font-semibold text-white" data-testid={`text-title-${index}`}>
             {title}

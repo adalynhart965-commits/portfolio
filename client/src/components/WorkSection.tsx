@@ -3,6 +3,15 @@ import Masonry from "react-masonry-css";
 import ProjectCard from "./ProjectCard";
 import projectsData from "../data/projects.json";
 
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  palette: string[];
+  image?: string;
+}
+
 export default function WorkSection() {
   const breakpointColumns = {
     default: 3,
@@ -34,13 +43,14 @@ export default function WorkSection() {
           className="flex -ml-6 w-auto"
           columnClassName="pl-6 bg-clip-padding"
         >
-          {projectsData.map((project, index) => (
+          {(projectsData as Project[]).map((project, index) => (
             <div key={project.id} className="mb-6">
               <ProjectCard
                 title={project.title}
                 description={project.description}
                 tags={project.tags}
                 palette={project.palette}
+                image={project.image}
                 index={index}
               />
             </div>
