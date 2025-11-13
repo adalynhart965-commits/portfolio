@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImage from "@assets/SHH_1762537291962.jpg";
+import profileImage from "@assets/ogo001_1762996756432.jpg";
 
 export default function AboutSection() {
   return (
